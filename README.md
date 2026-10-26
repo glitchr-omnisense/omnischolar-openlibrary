@@ -1,6 +1,6 @@
 # omnischolar/openlibrary
 
-Open Library for [omniscient/omnischolar](https://github.com/glitchr-studio/omnischolar): an
+Open Library for [omnisense/omnischolar](https://github.com/glitchr-omnisense/omnischolar): an
 author's books, one record per edition - its ISBNs, publisher, date, cover - for the Merger to
 group the editions of each book; a book by ISBN or Open Library id; a search; an author's page.
 No key.
