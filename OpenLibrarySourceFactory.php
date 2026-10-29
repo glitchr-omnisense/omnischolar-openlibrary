@@ -33,7 +33,7 @@ final class OpenLibrarySourceFactory extends SourceFactory
     {
         return new OpenLibrarySource(
             $this->http ?? HttpClient::create(),
-            (bool) $c->get('editions', true),
+            $c->bool('editions', true),
             (string) $c->get('base_uri', OpenLibrarySource::BASE_URI),
             ['User-Agent' => self::userAgent($c)],
             (float) $c->get('throttle', 0.4),

@@ -106,6 +106,17 @@ final class OpenLibrarySourceTest extends TestCase
         self::assertCount(1, $this->calls);
     }
 
+    /** editions as a site's YAML or environment gives it, a string: "false" is one record per work. */
+    public function testEditionsReadAsABooleanWhateverItsSpelling(): void
+    {
+        $this->source(['editions' => 'false'])->works('Monica Neagoy');
+        self::assertCount(1, $this->calls, 'no editions read');
+
+        $this->expectException(\Omnischolar\Exception\InvalidConfigException::class);
+        $this->expectExceptionMessage('editions');
+        $this->source(['editions' => 'maybe']);
+    }
+
     public function testABookByItsIsbn(): void
     {
         $book = $this->source()->work(Identifier::isbn('1452279705'));
