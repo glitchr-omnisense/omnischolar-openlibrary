@@ -1,0 +1,46 @@
+{
+    "$schema": "https://github.com/glitchr-omnisense/contracts/blob/1.x/resources/usage-policy.schema.json",
+    "provider": "openlibrary",
+    "rateLimits": [
+        {
+            "max": 1,
+            "window": "second",
+            "scope": "application",
+            "operations": [],
+            "note": "Non-identified requests. Identified requests (a User-Agent naming the application and a contact e-mail) get 3 a second."
+        }
+    ],
+    "concurrency": null,
+    "rights": {
+        "commercial": "unknown",
+        "openSourceRequired": null,
+        "caching": {
+            "permission": "unknown",
+            "maxTtl": null
+        },
+        "storage": "unknown",
+        "redistribution": "unknown",
+        "attribution": {
+            "required": false,
+            "text": null,
+            "url": null,
+            "where": []
+        },
+        "licence": null
+    },
+    "requirements": {
+        "key": false,
+        "userAgent": {
+            "required": false,
+            "pattern": null
+        }
+    },
+    "provenance": {
+        "terms": "https://archive.org/about/terms.php",
+        "policy": "https://openlibrary.org/developers/api",
+        "verifiedAt": "2026-11-10",
+        "declaredBy": "maintainer",
+        "contact": "openlibrary@archive.org",
+        "notes": "Read on 2026-11-10: the API page (1 request a second by default, 3 a second when identified with 'User-Agent: AppName (contact@example.org)'; 'please do not use our APIs to bulk download metadata': use the monthly data dumps) and the licensing page, which names no licence ('The Internet Archive does not assert any new copyright', existing rights may apply to some contributions): rights unknown. The User-Agent is asked for, not required: required false. No per-minute figure stated. Terms of service: archive.org's (not re-read in detail)."
+    }
+}

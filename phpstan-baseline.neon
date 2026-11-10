@@ -1,0 +1,301 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 4
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Binary operation "\." between ''https\://openlibrary…'' and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 2
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Binary operation "\." between ''https\://www…'' and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Binary operation "\." between ''key\:'' and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Cannot access offset ''edition_count'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Cannot access offset ''key'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 5
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Cannot access offset ''orcid'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Cannot access offset ''wikidata'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Cannot access offset 0 on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 10
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Cannot access offset mixed on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Cannot cast mixed to int\.$#'
+			identifier: cast.int
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 8
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Only iterables can be unpacked, mixed given\.$#'
+			identifier: arrayUnpacking.nonIterable
+			count: 3
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#1 \$array of function array_diff expects an array of values castable to string, array\<mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#1 \$array of function array_filter expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#1 \$array of function array_unique expects an array of values castable to string, array\<mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#1 \$callback of function array_map expects \(callable\(mixed\)\: mixed\)\|null, Closure\(array\)\: mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#1 \$code of static method Omnischolar\\OpenLibrary\\OpenLibrarySource\:\:language\(\) expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#1 \$date of static method Omnischolar\\OpenLibrary\\OpenLibrarySource\:\:publishDate\(\) expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#1 \$doc of method Omnischolar\\OpenLibrary\\OpenLibrarySource\:\:fromDoc\(\) expects array\<string, mixed\>, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#1 \$edition of method Omnischolar\\OpenLibrary\\OpenLibrarySource\:\:fromEdition\(\) expects array\<string, mixed\>, array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#1 \$edition of method Omnischolar\\OpenLibrary\\OpenLibrarySource\:\:fromEdition\(\) expects array\<string, mixed\>, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#1 \$text of static method Omnischolar\\Source\\HttpSource\:\:text\(\) expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 6
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#1 \$value of function count expects array\|Countable, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#2 \$array of function array_map expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#2 \$arrays of function array_diff expects an array of values castable to string, array\<int, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#2 \$doc of method Omnischolar\\OpenLibrary\\OpenLibrarySource\:\:fromEdition\(\) expects array\<string, mixed\>, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#2 \$value of static method Omnischolar\\Model\\Identifier\:\:tryOf\(\) expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 6
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#2 \.\.\.\$values of function sprintf expects bool\|float\|int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \#3 \$total of class Omnischolar\\Source\\Page constructor expects int\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \$alternativeNames of class Omnischolar\\Model\\Author constructor expects list\<string\>, list\<mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \$edition of class Omnischolar\\Model\\Work constructor expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \$publisher of class Omnischolar\\Model\\Work constructor expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Parameter \$urls of class Omnischolar\\Model\\Author constructor expects list\<string\>, list\<mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: OpenLibrarySource.php
+
+		-
+			message: '#^Cannot cast mixed to float\.$#'
+			identifier: cast.double
+			count: 1
+			path: OpenLibrarySourceFactory.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 1
+			path: OpenLibrarySourceFactory.php
+
+		-
+			message: '#^Cannot access property \$authors on Omnischolar\\Model\\Work\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Cannot access property \$identifiers on Omnischolar\\Model\\Author\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Cannot access property \$identifiers on Omnischolar\\Model\\Work\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Cannot access property \$name on Omnischolar\\Model\\Author\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Cannot access property \$publisher on Omnischolar\\Model\\Work\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Cannot access property \$source on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Cannot access property \$subtitle on Omnischolar\\Model\\Work\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Cannot access property \$title on Omnischolar\\Model\\Work\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Cannot access property \$type on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Cannot access property \$urls on Omnischolar\\Model\\Author\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Cannot access property \$year on Omnischolar\\Model\\Work\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Method Omnischolar\\OpenLibrary\\Tests\\OpenLibrarySourceTest\:\:source\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Parameter \#1 \$options of method Omnischolar\\Source\\SourceFactory\:\:create\(\) expects array\<string, mixed\>, array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php
+
+		-
+			message: '#^Property Omnischolar\\OpenLibrary\\Tests\\OpenLibrarySourceTest\:\:\$calls \(list\<array\{string, array\<string, string\>, array\<string, list\<string\>\>\}\>\) does not accept non\-empty\-list\<array\{string, array\<int\|string, array\<mixed\>\|string\>, mixed\}\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: Tests/OpenLibrarySourceTest.php

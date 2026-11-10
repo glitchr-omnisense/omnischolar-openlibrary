@@ -14,6 +14,7 @@ use Omnischolar\Source\Capability;
 use Omnischolar\Source\HttpSource;
 use Omnischolar\Source\Page;
 use Omnischolar\Source\Query;
+use Omnisense\Contracts\Policy\UsagePolicy;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 /**
@@ -48,6 +49,23 @@ final class OpenLibrarySource extends HttpSource
         float $throttle = 0.0,
     ) {
         parent::__construct($http, $baseUri, $headers, $throttle);
+    }
+
+    /**
+     * One request a second for an unidentified caller (policy.json); three
+     * when the User-Agent names a contact address (the factory's does when
+     * mailto is given), as Open Library's API page said on 2026-11-10.
+     */
+    public function usagePolicy(): UsagePolicy
+    {
+        $declared = parent::usagePolicy();
+        if (!str_contains($this->headers['User-Agent'] ?? '', '@')) {
+            return $declared;
+        }
+
+        return UsagePolicy::fromArray(array_replace($declared->toArray(), [
+            'rateLimits' => [['max' => 3, 'window' => 'second', 'note' => 'Identified: a User-Agent with a contact address.']],
+        ]));
     }
 
     public function getName(): string
