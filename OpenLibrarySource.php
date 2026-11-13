@@ -78,7 +78,7 @@ final class OpenLibrarySource extends HttpSource
         return [Capability::AUTHOR, Capability::WORKS, Capability::WORK, Capability::SEARCH, Capability::COVERS];
     }
 
-    /** An author by their Open Library id (OL7092953A), or the first one a name finds. */
+    /** An author by their Open Library id (OL9990001A), or the first one a name finds. */
     public function author(Identifier|string $author): ?Author
     {
         $id = self::identify($author, Scheme::OPENLIBRARY);
@@ -116,8 +116,8 @@ final class OpenLibrarySource extends HttpSource
     /**
      * An author's books, one record per edition: by their Open Library id
      * (only the books filed under it) or by their name (every author
-     * record of that name: "Monica Neagoy", "MONICA NEAGOY",
-     * "Monica M. Neagoy"...). The cursor is a page number.
+     * record of that name: "Jeanne Exemple", "JEANNE EXEMPLE",
+     * "Jeanne M. Exemple"...). The cursor is a page number.
      */
     public function works(Identifier|string $author, ?Query $query = null): Page
     {

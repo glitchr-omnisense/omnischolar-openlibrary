@@ -7,9 +7,9 @@ No key.
 
 ```php
 $openlibrary = (new OpenLibrarySourceFactory($http))->create(['mailto' => 'support@glitchr.io']);
-$editions = $openlibrary->works('Monica Neagoy');         // every spelling of the name, every edition
-$books = (new Merger())->merge($editions);                 // Planting the Seeds of Algebra PreK-2: one book, two editions
-$openlibrary->work('9781452279701');
+$editions = $openlibrary->works('Alain Aspect');          // every spelling of the name, every edition
+$books = (new Merger())->merge($editions);                 // one record per book, its editions inside
+$openlibrary->work('9780521004220');
 ```
 
 ```yaml

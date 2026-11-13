@@ -52,7 +52,7 @@ None. Open Library asks its callers to name themselves in the `User-Agent`, with
 | Operation | Supported | Reads |
 |---|---|---|
 | `author()` | yes | `OL...A`, or the first author record a name finds |
-| `works()` | yes | `OL...A` (only the books filed under it), or a name (every author record of that name: "Monica Neagoy", "MONICA NEAGOY", "Monica M. Neagoy") |
+| `works()` | yes | `OL...A` (only the books filed under it), or a name (every author record of that name: "Jeanne Exemple", "JEANNE EXEMPLE", "Jeanne M. Exemple") |
 | `work()` | yes | ISBN (that edition), `OL...M` (an edition), `OL...W` (a work); an `OL...A` is refused |
 | `search()` | yes | `text` (`q`), `title`, `author` |
 
@@ -91,21 +91,20 @@ use Symfony\Component\HttpClient\HttpClient;
 
 $openlibrary = (new OpenLibrarySourceFactory(HttpClient::create()))->create(['mailto' => getenv('OMNISCHOLAR_MAILTO') ?: null]);
 
-$w = $openlibrary->work('9781412996600');
+$w = $openlibrary->work('9780521004220');
 echo $w->fullTitle(), "\n  ", $w->publisher, ', ', $w->date, ', ', implode(' ', $w->isbns()), "\n  cover: ", $w->cover, "\n";
 ```
 
 ```
-Planting the seeds of algebra, PreK-2: explorations for the early grades
-  Corwin Press, 2012, 9781412996600
-  cover: 
+Levy Statistics & Laser Cooling
+  Cambridge University Press, 2001-12-15, 9780521004220
+  cover: https://covers.openlibrary.org/b/id/328256-L.jpg
 ```
 
-(called live on 2026-10-26 at 14:18 UTC, from the core's harness image, without a `mailto`; that
-edition has no cover on Open Library)
+(called live on 2026-11-13, from the core's harness image, with a `mailto`)
 
 From the core's harness, the editions grouped by the Merger:
-`docker compose run --rm omnischolar merge openlibrary:"Monica Neagoy" crossref:"Monica Neagoy"`.
+`docker compose run --rm omnischolar merge openlibrary:"Alain Aspect" crossref:"Alain Aspect"`.
 
 In Symfony:
 
@@ -127,12 +126,12 @@ omnischolar:
 
 ## Verified, and not
 
-Tested offline: `Tests/OpenLibrarySourceTest.php` (6 tests), on `MockHttpClient` with answers
-recorded on 2026-10-04 - `search.json?author=Monica Neagoy` (nine works, three author records), the
-editions of the two works that have two, her author page, an edition by ISBN and its work; the
-Merger grouping the editions of *Planting the Seeds of Algebra, PreK-2* (2012, filed twice, and
-2016) into one book, and keeping the two volumes of the *Méthode de Singapour CE1* apart. Called
-live on 2026-10-04 and on 2026-10-26 (the example above).
+Tested offline: `Tests/OpenLibrarySourceTest.php` (6 tests), on `MockHttpClient` with invented
+records in the shape of answers recorded on 2026-10-04 - `search.json?author=Jeanne Exemple` (nine
+works, three author records), the editions of the two works that have two, her author page, an
+edition by ISBN and its work; the Merger grouping the editions of *Sowing the Seeds of Geometry,
+PreK-2* (2012, filed twice, and 2016) into one book, and keeping the two volumes of the *Méthode
+Exemple CE1* apart. Called live on 2026-10-04, 2026-10-26 and 2026-11-13 (the example above).
 
 Limits of the service: books only - no articles, no citations, no metrics, rarely an abstract.
 Its records are entered by hand: the same book is sometimes filed twice (two works with one ISBN:
