@@ -25,6 +25,14 @@ omnischolar:
 
 See [docs/](docs/index.md).
 
+## Install
+
+```sh
+composer require omnischolar/openlibrary
+```
+
+It brings the family's core, `omnisense/omnischolar`, and `omnisense/contracts` with it. No account and no key; a `mailto` of yours, in the User-Agent as Open Library asks ([`policy.json`](policy.json)). `$http` is `HttpClient::create()` in plain PHP.
+
 ## Usage policy
 
 Declared as data in [`policy.json`](policy.json) (read at https://openlibrary.org/developers/api on 2026-11-10), and honoured on every request by the
